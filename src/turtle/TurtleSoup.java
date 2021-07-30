@@ -48,7 +48,9 @@ public class TurtleSoup {
 	 */
 	public static int calculatePolygonSidesFromAngle(double angle) {
 		// Burak
-		throw new RuntimeException("implement me!");
+		int sides;
+		sides = (int) (360 / (180 - Math.round(angle)));
+		return sides;
 	}
 
 	/**
@@ -168,8 +170,13 @@ public class TurtleSoup {
 		//drawSquare(turtle, 40);
 		drawPersonalArt(turtle);
 
+		//calculatePolygonSidesFromAngle
+		System.out.println(calculatePolygonSidesFromAngle(108));
+
 		// draw the window
 		turtle.draw();
+
+
 	}
 
 }
