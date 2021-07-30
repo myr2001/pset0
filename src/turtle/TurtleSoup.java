@@ -32,7 +32,9 @@ public class TurtleSoup {
 	 */
 	public static double calculateRegularPolygonAngle(int sides) {
 	// Sinem 
-		throw new RuntimeException("implement me!");
+		double angle = (double)(sides - 2)*180/sides;
+		return angle;
+		//throw new RuntimeException("implement me!");
 	}
 
 	/**
