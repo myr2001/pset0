@@ -111,19 +111,49 @@ public class TurtleSoup {
 		throw new RuntimeException("implement me!");
 	}
 
-	/**
-	 * Draw your personal, custom art.
-	 * 
-	 * Many interesting images can be drawn using the simple implementation of a
-	 * turtle. For this function, draw something interesting; the complexity can be
-	 * as little or as much as you want.
-	 * 
-	 * @param turtle the turtle context
-	 */
-	public static void drawPersonalArt(Turtle turtle) {
-		// Onur
-		throw new RuntimeException("implement me!");
-	}
+    /**
+     * Draw your personal, custom art.
+     * 
+     * Many interesting images can be drawn using the simple implementation of a turtle.  For this
+     * function, draw something interesting; the complexity can be as little or as much as you want.
+     * 
+     * @param turtle the turtle context
+     */
+    public static void drawPersonalArt(Turtle turtle) {
+        turtle.color(PenColor.BLUE);
+        for(int i=0; i<510; i++){
+            turtle.forward(1);
+            turtle.turn(1);
+        }
+
+        turtle.turn(180);
+
+        for(int i=0; i<55; i++){
+            turtle.forward(3);
+            turtle.turn(-4);
+        }
+
+        turtle.turn(90);
+
+        for(int i=0; i<12; i++){
+            turtle.forward(3);
+            turtle.turn(8);
+        }
+        
+        turtle.turn(180);
+
+        for(int i=0; i<46; i++){
+            turtle.forward(3);
+            turtle.turn(-4);
+        }
+
+        turtle.turn(90);
+
+        for(int i=0; i<12; i++){
+            turtle.forward(3);
+            turtle.turn(8);
+        }
+    }
 
 	/**
 	 * Main method.
@@ -134,8 +164,9 @@ public class TurtleSoup {
 	 */
 	public static void main(String args[]) {
 		DrawableTurtle turtle = new DrawableTurtle();
-
-		drawSquare(turtle, 40);
+		
+		//drawSquare(turtle, 40);
+		drawPersonalArt(turtle);
 
 		// draw the window
 		turtle.draw();
