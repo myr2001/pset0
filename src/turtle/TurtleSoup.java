@@ -91,7 +91,15 @@ public class TurtleSoup {
 	public static double calculateHeadingToPoint(double currentHeading, int currentX, int currentY, int targetX,
 			int targetY) {
 		// Merthan
-		throw new RuntimeException("implement me!");
+		int newX = targetX - currentX ;
+		int newY = targetY - currentY;
+		double angleFromNorth = Math.toDegrees(Math.atan2(newX , newY));
+		double angle = angleFromNorth - currentHeading;
+		if (angle < 0){
+			angle += 360; // must be positive
+		}
+		return angle ;
+		// throw new RuntimeException("implement me!");
 	}
 
 	/**
