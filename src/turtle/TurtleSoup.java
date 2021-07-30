@@ -15,7 +15,7 @@ public class TurtleSoup {
      * @param sideLength length of each side
      */
     public static void drawSquare(Turtle turtle, int sideLength) {
-        throw new RuntimeException("implement me!");
+        //throw new RuntimeException("implement me!");
     }
 
     /**
@@ -109,7 +109,39 @@ public class TurtleSoup {
      * @param turtle the turtle context
      */
     public static void drawPersonalArt(Turtle turtle) {
-        throw new RuntimeException("implement me!");
+        turtle.color(PenColor.BLUE);
+        for(int i=0; i<510; i++){
+            turtle.forward(1);
+            turtle.turn(1);
+        }
+
+        turtle.turn(180);
+
+        for(int i=0; i<55; i++){
+            turtle.forward(3);
+            turtle.turn(-4);
+        }
+
+        turtle.turn(90);
+
+        for(int i=0; i<12; i++){
+            turtle.forward(3);
+            turtle.turn(8);
+        }
+        
+        turtle.turn(180);
+
+        for(int i=0; i<46; i++){
+            turtle.forward(3);
+            turtle.turn(-4);
+        }
+
+        turtle.turn(90);
+
+        for(int i=0; i<12; i++){
+            turtle.forward(3);
+            turtle.turn(8);
+        }
     }
 
     /**
@@ -122,7 +154,7 @@ public class TurtleSoup {
     public static void main(String args[]) {
         DrawableTurtle turtle = new DrawableTurtle();
 
-        drawSquare(turtle, 40);
+        drawPersonalArt(turtle);
 
         // draw the window
         turtle.draw();
