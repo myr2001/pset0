@@ -122,12 +122,11 @@ public class TurtleSoup {
 		// Emre
 		double currentHeading = 0;
 		List<Double> headings = new ArrayList<Double>();
-
-		for (int i = 0; i < xCoords.size()-1; i++) {
-			headings.add(
-					calculateHeadingToPoint(
-					currentHeading, xCoords.get(i), yCoords.get(i), 
-					xCoords.get(i+1), yCoords.get(i+1)));
+		if (!xCoords.isEmpty() && (xCoords.size() == yCoords.size())) {
+			for (int i = 0; i < xCoords.size() - 1; i++) {
+				headings.add(calculateHeadingToPoint(currentHeading, xCoords.get(i), yCoords.get(i), xCoords.get(i + 1),
+						yCoords.get(i + 1)));
+			}
 		}
 		return headings;
 	}
