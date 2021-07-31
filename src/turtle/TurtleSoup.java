@@ -67,7 +67,7 @@ public class TurtleSoup {
 	 */
 	public static void drawRegularPolygon(Turtle turtle, int sides, int sideLength) {
 		// Umut
-		throw new RuntimeException("implement me!");
+		System.out.println("UMUT");
 	}
 
 	/**
