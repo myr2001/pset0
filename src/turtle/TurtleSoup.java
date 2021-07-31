@@ -31,10 +31,10 @@ public class TurtleSoup {
 	 * @return angle in degrees, where 0 <= angle < 360
 	 */
 	public static double calculateRegularPolygonAngle(int sides) {
-	// Sinem 
-		double angle = (double)(sides - 2)*180/sides;
+		// Sinem
+		double angle = (double) (sides - 2) * 180 / sides;
 		return angle;
-		//throw new RuntimeException("implement me!");
+		// throw new RuntimeException("implement me!");
 	}
 
 	/**
@@ -93,14 +93,14 @@ public class TurtleSoup {
 	public static double calculateHeadingToPoint(double currentHeading, int currentX, int currentY, int targetX,
 			int targetY) {
 		// Merthan
-		int newX = targetX - currentX ;
+		int newX = targetX - currentX;
 		int newY = targetY - currentY;
-		double angleFromNorth = Math.toDegrees(Math.atan2(newX , newY));
+		double angleFromNorth = Math.toDegrees(Math.atan2(newX, newY));
 		double angle = angleFromNorth - currentHeading;
-		if (angle < 0){
+		if (angle < 0) {
 			angle += 360; // must be positive
 		}
-		return angle ;
+		return angle;
 		// throw new RuntimeException("implement me!");
 	}
 
@@ -120,52 +120,62 @@ public class TurtleSoup {
 	 */
 	public static List<Double> calculateHeadings(List<Integer> xCoords, List<Integer> yCoords) {
 		// Emre
-		throw new RuntimeException("implement me!");
+		double currentHeading = 0;
+		List<Double> headings = new ArrayList<Double>();
+
+		for (int i = 0; i < xCoords.size()-1; i++) {
+			headings.add(
+					calculateHeadingToPoint(
+					currentHeading, xCoords.get(i), yCoords.get(i), 
+					xCoords.get(i+1), yCoords.get(i+1)));
+		}
+		return headings;
 	}
 
-    /**
-     * Draw your personal, custom art.
-     * 
-     * Many interesting images can be drawn using the simple implementation of a turtle.  For this
-     * function, draw something interesting; the complexity can be as little or as much as you want.
-     * 
-     * @param turtle the turtle context
-     */
-    public static void drawPersonalArt(Turtle turtle) {
-        turtle.color(PenColor.BLUE);
-        for(int i=0; i<510; i++){
-            turtle.forward(1);
-            turtle.turn(1);
-        }
+	/**
+	 * Draw your personal, custom art.
+	 * 
+	 * Many interesting images can be drawn using the simple implementation of a
+	 * turtle. For this function, draw something interesting; the complexity can be
+	 * as little or as much as you want.
+	 * 
+	 * @param turtle the turtle context
+	 */
+	public static void drawPersonalArt(Turtle turtle) {
+		turtle.color(PenColor.BLUE);
+		for (int i = 0; i < 510; i++) {
+			turtle.forward(1);
+			turtle.turn(1);
+		}
 
-        turtle.turn(180);
+		turtle.turn(180);
 
-        for(int i=0; i<55; i++){
-            turtle.forward(3);
-            turtle.turn(-4);
-        }
+		for (int i = 0; i < 55; i++) {
+			turtle.forward(3);
+			turtle.turn(-4);
+		}
 
-        turtle.turn(90);
+		turtle.turn(90);
 
-        for(int i=0; i<12; i++){
-            turtle.forward(3);
-            turtle.turn(8);
-        }
-        
-        turtle.turn(180);
+		for (int i = 0; i < 12; i++) {
+			turtle.forward(3);
+			turtle.turn(8);
+		}
 
-        for(int i=0; i<46; i++){
-            turtle.forward(3);
-            turtle.turn(-4);
-        }
+		turtle.turn(180);
 
-        turtle.turn(90);
+		for (int i = 0; i < 46; i++) {
+			turtle.forward(3);
+			turtle.turn(-4);
+		}
 
-        for(int i=0; i<12; i++){
-            turtle.forward(3);
-            turtle.turn(8);
-        }
-    }
+		turtle.turn(90);
+
+		for (int i = 0; i < 12; i++) {
+			turtle.forward(3);
+			turtle.turn(8);
+		}
+	}
 
 	/**
 	 * Main method.
@@ -176,16 +186,15 @@ public class TurtleSoup {
 	 */
 	public static void main(String args[]) {
 		DrawableTurtle turtle = new DrawableTurtle();
-		
-		//drawSquare(turtle, 40);
+
+		// drawSquare(turtle, 40);
 		drawPersonalArt(turtle);
 
-		//calculatePolygonSidesFromAngle
+		// calculatePolygonSidesFromAngle
 		System.out.println(calculatePolygonSidesFromAngle(108));
 
 		// draw the window
 		turtle.draw();
-
 
 	}
 
